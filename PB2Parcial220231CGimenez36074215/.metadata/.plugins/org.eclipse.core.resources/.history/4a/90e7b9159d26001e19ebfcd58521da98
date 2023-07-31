@@ -1,0 +1,71 @@
+package ar.edu.unlam.pb2.eva03;
+
+import java.util.HashSet;
+import java.util.Set;
+
+
+public class Batalla {
+	private Double latitud;
+	private Double longitud;
+	private TipoDeBatalla tipo;
+	Set<Vehiculo> vehiculosEnLaBatalla;
+	
+	public Batalla(TipoDeBatalla tipo,Double longitud ,Double latitud ) {
+		this.vehiculosEnLaBatalla = new HashSet<>();
+		this.tipo=tipo;
+		this.longitud=longitud;
+		this.latitud=latitud;
+		
+	}
+
+	public Double getLatitud() {
+		return latitud;
+	}
+
+	public void setLatitud(Double latitud) {
+		this.latitud = latitud;
+	}
+
+	public Double getLongitud() {
+		return longitud;
+	}
+
+	public void setLongitud(Double longitud) {
+		this.longitud = longitud;
+	}
+
+	public TipoDeBatalla getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoDeBatalla tipo) {
+		this.tipo = tipo;
+	}
+
+	public Set<Vehiculo> getVehiculosEnLaBatalla() {
+		return vehiculosEnLaBatalla;
+	}
+
+	public Boolean setVehiculosEnLaBatalla(Vehiculo nuevoVehiculo) throws VehiculoIncompatible {
+		switch(tipo) {
+		case TERRESTRE:
+						if(!(nuevoVehiculo instanceof Terrestre)) {
+							throw new VehiculoIncompatible();
+						}
+		break;
+		case ACUATICA:
+			if(!(nuevoVehiculo instanceof Acuatico)) {
+				throw new VehiculoIncompatible();
+			}
+			break;
+		case AEREA:	
+			if(!(nuevoVehiculo instanceof Volador)) {
+				throw new VehiculoIncompatible();
+			}
+			break;
+		}
+		this.vehiculosEnLaBatalla.add(nuevoVehiculo);
+		return true;
+	}
+	
+}

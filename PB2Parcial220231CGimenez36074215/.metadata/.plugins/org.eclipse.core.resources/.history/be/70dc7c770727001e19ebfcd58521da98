@@ -1,0 +1,18 @@
+package ar.edu.unlam.pb2.eva03;
+
+import ar.edu.unlam.pb2.eva03.interfaces.INadador;
+
+public class Nadador implements INadador {
+	
+	private Integer numeroDeSocio;
+	private String nombre;
+	private String estiloPreferido;
+
+	public Nadador(Integer numeroDeSocio, String nombre, String estiloPreferido) {
+		this.numeroDeSocio=numeroDeSocio;
+		this.nombre=nombre;
+		this.estiloPreferido=estiloPreferido;
+		
+	}
+
+}

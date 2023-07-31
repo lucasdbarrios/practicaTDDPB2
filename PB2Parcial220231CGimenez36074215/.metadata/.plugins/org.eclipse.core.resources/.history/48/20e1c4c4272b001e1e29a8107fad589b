@@ -1,0 +1,33 @@
+package ar.unlam.edu.ar;
+
+
+
+public class TicketMixto extends Ticket {
+	
+	private TicketPasajero ticketParaPasajero;
+	private TicketCarga ticketParaCarga;
+	
+	
+	
+	public TicketMixto(Integer numeroTicket, Pasajero pasajero, Carga carga) {
+		super(numeroTicket);
+		this.ticketParaPasajero= new TicketPasajero(id, pasajero);
+		this.ticketParaCarga= new TicketCarga(id, carga.getPeso());
+		
+	}
+
+	
+
+	public Pasajero obtenerPasajeroConTicket() {
+			return this.ticketParaPasajero.obtenerPasajeroConTicket();
+		
+	}
+
+	public Double mostrarCarga() {
+		return this.ticketParaCarga.mostrarCarga();
+		
+	}
+
+
+
+}

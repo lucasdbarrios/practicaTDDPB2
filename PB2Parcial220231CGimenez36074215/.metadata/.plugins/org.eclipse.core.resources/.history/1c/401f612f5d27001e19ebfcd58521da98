@@ -1,0 +1,36 @@
+package ar.unlam.edu.ar;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.print.attribute.HashAttributeSet;
+
+public class TicketPasajero extends Ticket implements ITransportable{
+	
+	private Set<Pasajero>pasajeros ;
+	private TransportePasajero transporte;
+	
+	public TicketPasajero(Integer id) {
+		super(id);
+		this.pasajeros=new HashSet<>();
+	}
+	
+	public Boolean ingresarPasajero(Pasajero nuevoPasajero) throws TransporteException {
+		if(!(transporte instanceof TransportePasajero)){
+			throw new TransporteException();
+		}
+	return	this.pasajeros.add(nuevoPasajero);
+		
+	}
+	
+	public Integer cantidadDePasajeros() {
+		return this.pasajeros.size();
+	}
+
+	@Override
+	public Integer obtenerCantidadMaximaPasajero() {
+		return ((TransportePasajero)transporte).getCantidadPasajerosMaximos();
+		
+	}
+
+}

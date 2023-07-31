@@ -1,0 +1,15 @@
+package ar.edu.unlam.pb2.eva02;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Compraventa {
+	
+	private String nombre;
+	private Set<Articulo> combos;
+	public Compraventa(String nombre) {
+		this.nombre=nombre;
+		this.combos = new HashSet<>();
+	}
+
+}

@@ -1,0 +1,9 @@
+package ar.edu.unlam.pb2.eva03;
+
+public class HidroAvion implements Volador,Acuatico {
+
+	public HidroAvion(Integer codigoHidroAvion, String nombre) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

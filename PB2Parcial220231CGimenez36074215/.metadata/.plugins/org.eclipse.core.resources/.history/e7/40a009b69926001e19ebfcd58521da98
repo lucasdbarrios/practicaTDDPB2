@@ -1,0 +1,91 @@
+package ar.edu.unlam.pb2.eva03;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class FuerzaArmada {
+
+	private Set<Vehiculo> convoy;
+	private Map<String, Batalla> batallas;
+	
+	
+	public FuerzaArmada() {
+		this.convoy= new HashSet<>();
+		this.batallas= new HashMap<>();
+		
+	}
+	
+	
+	
+
+
+	public Integer getCapacidadDeDefensa() {
+		
+		return this.convoy.size();
+	}
+
+
+
+
+
+	public void agregarVehiculo(Vehiculo nuevo) throws VehiculoExistenteException {
+		if(convoy.contains(nuevo)) {
+			throw new VehiculoExistenteException();
+		}
+		convoy.add(nuevo);
+	}
+
+
+
+
+
+	public void crearBatalla(String nombreDeLaBatalla, TipoDeBatalla tipoBatalla, Double latitud, Double longitud) throws BatallaDuplicadaException {
+		
+		Batalla nuevaBatalla = new Batalla(tipoBatalla,longitud,latitud);
+		
+		if(batallas.containsKey(nombreDeLaBatalla)) {
+			throw new BatallaDuplicadaException();
+		}
+		
+		batallas.put(nombreDeLaBatalla, nuevaBatalla);
+		
+	}
+
+
+
+
+
+	public Batalla getBatalla(String nombreBatalla) {
+		
+		return batallas.get(nombreBatalla);
+	}
+
+
+
+
+
+	
+
+
+
+
+
+	public boolean enviarALaBatalla(String batallaActual, Integer vehiculoAEnviar) {
+		Batalla batallaBuscada = buscarBatalla(batallaActual);
+		Vehiculo vehiculoBuscado = buscarVehiculo(vehiculoAEnviar);
+		batallaBuscada.setVehiculosEnLaBatalla(vehiculoBuscado);
+		return false;
+	}
+
+
+
+
+
+	private Batalla buscarBatalla(String batallaActual) {
+		if(batallas.)
+		return null;
+	} 
+
+}

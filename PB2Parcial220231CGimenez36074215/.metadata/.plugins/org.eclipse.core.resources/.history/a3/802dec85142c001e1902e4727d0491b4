@@ -1,0 +1,58 @@
+package ar.edu.unlam.pb2.eva02;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Compraventa {
+	
+	private String nombre;
+	private Set<Articulo> articulosDisponibles;
+	private Map<Integer,Combo> combos;
+	
+	public Compraventa(String nombre) {
+		this.nombre=nombre;
+		this.combos = new HashMap<>();
+		this.articulosDisponibles= new HashSet<>();
+	}
+	public void ingresarProducto(Articulo producto) throws ProductoExistenteException {
+		if(articulosDisponibles.contains(producto)) {
+			throw new ProductoExistenteException ();
+		}
+		articulosDisponibles.add(producto);
+		
+	}
+	public void ingresarProductoAlCombo(Integer numeroCombo, Articulo producto) throws ComboInexistenteException, TipoArticuloInvalidoException {
+		Combo comboBuscado = buscarComboPorNumero(numeroCombo);
+		
+		comboBuscado.ingresarArticuloAlCombo(producto);
+		
+	}
+	private void verificarSiTipoDeArticuloEsDelCombo(Combo comboBuscado, Articulo producto) {
+		// TODO Auto-generated method stub
+		
+	}
+	private Combo buscarComboPorNumero(Integer numeroCombo) throws ComboInexistenteException {
+		if(!(combos.containsKey(numeroCombo))) {
+			throw new ComboInexistenteException();
+		}
+		return combos.get(numeroCombo);
+	}
+	public void creoNuevoCombo(Integer numeroCombo, Combo nuevoCombo) throws ComboExistenteException {
+		if(combos.containsKey(numeroCombo)) {
+			throw new ComboExistenteException();
+		}
+		
+		 combos.put(numeroCombo, nuevoCombo);
+		
+	}
+	public Integer CantidadDeProductosEnCombo(Integer numeroCombo) throws ComboInexistenteException {
+		Combo comboBuscado = buscarComboPorNumero(numeroCombo);
+		
+		return comboBuscado.obtenerCantidadDeArticulos();
+	}
+
+}

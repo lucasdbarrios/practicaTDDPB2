@@ -1,0 +1,22 @@
+package ar.edu.unlam.pb2.eva02;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestCompraventa {
+
+	@Test
+	public void test() {
+		Articulo producto = new Antiguedad(1, "Jarron", 9000, "jarron florentino", 1, TipoArticulo.ANTIGUEDAD);
+		Articulo producto2 = new Antiguedad(2, "Florero", 9500, " florentino", 1, TipoArticulo.ANTIGUEDAD);
+		
+		Compraventa elLitoral = new Compraventa("El Litoral");
+		elLitoral.ingresarProducto(producto);
+		elLitoral.ingresarProducto(producto2);
+		Integer numeroCombo =1;
+		elLitoral.ingresarProductoAlCombo(numeroCombo,producto);
+		elLitoral.ingresarProductoAlCombo(numeroCombo,producto2);
+	}
+
+}

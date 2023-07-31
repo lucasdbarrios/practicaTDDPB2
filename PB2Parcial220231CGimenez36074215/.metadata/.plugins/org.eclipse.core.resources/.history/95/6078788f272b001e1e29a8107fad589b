@@ -1,0 +1,33 @@
+package ar.unlam.edu.ar;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class TicketMixto extends Ticket {
+	
+	private TicketPasajero ticketParaPasajero;
+	private TicketCarga ticketParaCarga;
+	private Pasajero ticketDelPasajero;
+	private Double pesoDelMixto;
+	
+	
+	public TicketMixto(Integer id, Pasajero pasajero, Carga carga) {
+		super(id);
+		this.ticketParaPasajero= new TicketPasajero(id, pasajero);
+		this.ticketParaCarga= new TicketCarga(id, carga.getPeso());
+		
+	}
+
+	public Pasajero obtenerPasajeroConTicket() {
+			return this.ticketParaPasajero.obtenerPasajeroConTicket();
+		
+	}
+
+	public void ingresarcarga(Double peso) {
+		this.ticketParaCarga.ingresarcarga(peso);
+		
+	}
+
+
+
+}

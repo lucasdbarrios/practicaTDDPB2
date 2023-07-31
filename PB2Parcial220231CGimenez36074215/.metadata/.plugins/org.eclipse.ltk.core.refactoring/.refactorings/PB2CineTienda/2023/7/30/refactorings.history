@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ar.edu.unlam.rec220231c.orden&apos; to &apos;OrdenDePelicula&apos;&#x0D;&#x0A;- Original project: &apos;PB2CineTienda&apos;&#x0D;&#x0A;- Original element: &apos;ar.edu.unlam.rec220231c.orden&apos;&#x0D;&#x0A;- Renamed element: &apos;ar.edu.unlam.rec220231c.OrdenDePelicula&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;orden&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ar.edu.unlam.rec220231c{orden.java[orden" matchStrategy="1" name="OrdenDePelicula" qualified="false" references="true" similarDeclarations="false" stamp="1689779803765" textual="false" version="1.0"/>
+</session>

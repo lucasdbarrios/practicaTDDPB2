@@ -1,0 +1,51 @@
+package ar.edu.unlam.pb2.eva02;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestCasesCompraventa {
+
+	@Test
+	public void queSePuedaIngresarUnComboAntiguedad() throws ProductoExistenteException, ComboExistenteException, ComboInexistenteException, TipoArticuloInvalidoException {
+		
+			Articulo producto = new Antiguedad(1, "Jarron", 9000, "jarron florentino", 1, TipoArticulo.ANTIGUEDAD);
+			Articulo producto2 = new Antiguedad(2, "Florero", 9500, " florentino", 1, TipoArticulo.ANTIGUEDAD);
+			
+			Compraventa elLitoral = new Compraventa("El Litoral");
+			elLitoral.ingresarProducto(producto);
+			elLitoral.ingresarProducto(producto2);
+			Integer numeroCombo =1;
+			TipoArticulo tipoCombo = TipoArticulo.ANTIGUEDAD;
+			Combo nuevoCombo = new Combo(numeroCombo, tipoCombo);
+			elLitoral.creoNuevoCombo(numeroCombo,nuevoCombo);
+			elLitoral.ingresarProductoAlCombo(numeroCombo,producto);
+			elLitoral.ingresarProductoAlCombo(numeroCombo,producto2);
+			
+			assertEquals((Integer)2, elLitoral.CantidadDeProductosEnCombo(numeroCombo));
+
+	}
+	
+	@Test(expected = TipoArticuloInvalidoException.class)
+	public void queNoSePuedaIngresarUnComboAntiguedad() throws ProductoExistenteException, ComboExistenteException, ComboInexistenteException, TipoArticuloInvalidoException {
+		
+			Articulo producto = new Antiguedad(1, "Jarron", 9000, "jarron florentino", 1, TipoArticulo.ANTIGUEDAD);
+			Articulo producto2 = new Antiguedad(2, "Florero", 9500, " florentino", 1, TipoArticulo.EXOTICO);
+			
+			Compraventa elLitoral = new Compraventa("El Litoral");
+			elLitoral.ingresarProducto(producto);
+			elLitoral.ingresarProducto(producto2);
+			Integer numeroCombo =1;
+			TipoArticulo tipoCombo = TipoArticulo.ANTIGUEDAD;
+			Combo nuevoCombo = new Combo(numeroCombo, tipoCombo);
+			elLitoral.creoNuevoCombo(numeroCombo,nuevoCombo);
+			elLitoral.ingresarProductoAlCombo(numeroCombo,producto);
+			elLitoral.ingresarProductoAlCombo(numeroCombo,producto2);
+			
+//			assertEquals((Integer)2, elLitoral.CantidadDeProductosEnCombo(numeroCombo));
+
+	}
+
+}
+	
+

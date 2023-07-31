@@ -1,0 +1,26 @@
+package ar.unlam.edu.ar;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.print.attribute.HashAttributeSet;
+
+public class TicketPasajero extends Ticket{
+	
+	private Set<Pasajero>pasajeros ;
+	
+	public TicketPasajero(Integer id) {
+		super(id);
+		this.pasajeros=new HashSet<>();
+	}
+	
+	public void ingresarPasajero(Pasajero nuevoPasajero) {
+		this.pasajeros.add(nuevoPasajero);
+		
+	}
+	
+	public Integer cantidadDePasajeros() {
+		return this.pasajeros.size();
+	}
+
+}

@@ -1,0 +1,43 @@
+package ar.unlam.edu.ar;
+
+public class TransporteMixto extends MedioTransporte {
+	/*
+	 * No se pueden agregar mas Atributos
+	 */
+	
+	private Integer cantidadPasajerosMaximos;
+	private Double cargaMaxima;
+	private TransportePasajero PasajerosEnTransporte;
+	private TransporteCarga CargaEnTransporte;
+ 
+
+	public TransporteMixto(String patente, Integer cantidadPasajerosMaximos, Double cargaMaxima) {
+		super(patente);
+		this.cantidadPasajerosMaximos=cantidadPasajerosMaximos;
+		this.cargaMaxima=cargaMaxima;
+	}
+
+	
+ 
+
+	public Integer getCantidadPasajerosMaximos() {
+		return ((TransportePasajero)PasajerosEnTransporte).getCantidadPasajerosMaximos();
+	}
+
+	public void setCantidadPasajerosMaximos(Integer cantidadPasajerosMaximos) {
+		this.cantidadPasajerosMaximos = cantidadPasajerosMaximos;
+		((TransportePasajero)PasajerosEnTransporte).setCantidadPasajerosMaximos(this.cantidadPasajerosMaximos);
+	}
+
+	public Double getCargaMaxima() {
+		return ((TransporteCarga)CargaEnTransporte).getCargaMaxima();
+	}
+
+	public void setCargaMaxima(Double cargaMaxima) {
+		this.cargaMaxima = cargaMaxima;
+		((TransporteCarga)CargaEnTransporte).setCargaMaxima(this.cargaMaxima);
+	}
+	
+	
+
+}

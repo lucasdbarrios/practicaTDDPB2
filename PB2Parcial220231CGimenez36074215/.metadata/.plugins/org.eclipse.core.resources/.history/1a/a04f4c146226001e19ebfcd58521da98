@@ -1,0 +1,26 @@
+package ar.edu.unlam.pb2.eva03;
+
+public class Avion implements Volador {
+
+	
+	private Integer altura;
+	private String nombre;
+	public Avion(Integer altura, String nombre) {
+		this.altura=0.0;
+		this.nombre=nombre;
+		
+	}
+	public Integer getAltura() {
+		return altura;
+	}
+	public void setAltura(Integer altura) {
+		this.altura = altura;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+}

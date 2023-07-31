@@ -1,0 +1,30 @@
+package ar.unlam.edu.ar;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class TicketMixto extends Ticket {
+	
+	private TicketPasajero ticketParaPasajero;
+	private TicketCarga ticketParaCarga;
+	
+	
+	public TicketMixto(Integer id) {
+		super(id);
+		this.ticketParaPasajero= new TicketPasajero(id);
+		this.ticketParaCarga= new TicketCarga(id);
+	}
+
+	public void ingresarPasajero(Pasajero pasajero) throws PasajeroExistenteException, CantidadPasajeroSobrepasadaException {
+			this.ticketParaPasajero.ingresarPasajero(pasajero);
+		
+	}
+
+	public void ingresarcarga(Double peso) {
+		this.ticketParaCarga.ingresarcarga(peso);
+		
+	}
+
+
+
+}

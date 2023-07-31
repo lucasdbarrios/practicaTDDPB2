@@ -1,0 +1,32 @@
+package ar.edu.unlam.pb2.eva02;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class Compraventa {
+	
+	private String nombre;
+	private Set<Articulo> articulosDisponibles;
+	private Map<Integer, Articulo> combos;
+	public Compraventa(String nombre) {
+		this.nombre=nombre;
+		this.combos = new HashMap<>();
+		this.articulosDisponibles= new HashSet<>();
+	}
+	public void ingresarProducto(Articulo producto) throws ProductoExistenteException {
+		if(articulosDisponibles.contains(producto)) {
+			throw new ProductoExistenteException ();
+		}
+		articulosDisponibles.add(producto);
+		
+	}
+	public void ingresarProductoAlCombo(Integer numeroCombo, Articulo producto) {
+		if(combos.containsKey(producto)) {
+			
+		}
+		combos.put(numeroCombo, producto);
+	}
+
+}

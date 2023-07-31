@@ -1,0 +1,29 @@
+package ar.unlam.edu.ar;
+
+public class TicketCarga extends Ticket {
+
+	
+	private Double cargaMaxima;
+	
+	public TicketCarga(Integer id,Double cargaMaxima) {
+		super(id);
+		this.cargaMaxima =0.0;
+		
+		
+	}
+	
+	
+
+	public void ingresarcarga(Double carga) {
+		// TODO Auto-generated method stub
+		 cargaMaxima= carga;
+	}
+	
+	
+	public Double mostrarCarga() {
+		// TODO Auto-generated method stub
+		 return this.cargaMaxima;
+	}
+	
+
+}

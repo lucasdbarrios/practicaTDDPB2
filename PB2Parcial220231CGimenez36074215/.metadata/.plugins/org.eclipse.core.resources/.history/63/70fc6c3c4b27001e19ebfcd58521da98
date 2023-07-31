@@ -1,0 +1,10 @@
+package ar.unlam.edu.ar;
+
+public class TransportePasajero extends MedioTransporte{
+
+	public TransportePasajero(String patente) {
+		super(patente);
+		// TODO Auto-generated constructor stub
+	}
+
+}

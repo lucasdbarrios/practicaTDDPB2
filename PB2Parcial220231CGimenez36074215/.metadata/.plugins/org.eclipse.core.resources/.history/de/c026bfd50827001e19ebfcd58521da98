@@ -1,0 +1,35 @@
+package ar.edu.unlam.pb2.eva03;
+
+import ar.edu.unlam.pb2.eva03.interfaces.ICiclista;
+
+public class Ciclista implements ICiclista {
+	private Integer numeroDeSocio;
+	private String nombre;
+	private String tipoDeBicicleta;
+
+	public Ciclista(Integer numeroDeSocio, String nombre, String tipoDeBicicleta() {
+		this.numeroDeSocio=numeroDeSocio;
+		this.nombre=nombre;
+		this.tipoDeBicicleta=tipoDeBicicleta;
+	}
+	public Integer getNumeroDeSocio() {
+		return numeroDeSocio;
+	}
+	public void setNumeroDeSocio(Integer numeroDeSocio) {
+		this.numeroDeSocio = numeroDeSocio;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getTipoDeBicicleta() {
+		return tipoDeBicicleta;
+	}
+	public void setTipoDeBicicleta(String tipoDeBicicleta) {
+		this.tipoDeBicicleta = tipoDeBicicleta;
+	}
+	
+
+}

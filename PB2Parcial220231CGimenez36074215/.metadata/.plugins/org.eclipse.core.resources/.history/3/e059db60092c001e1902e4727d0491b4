@@ -1,0 +1,24 @@
+package ar.edu.unlam.pb2.eva02;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Compraventa {
+	
+	private String nombre;
+	private Set<Articulo> articulosDisponibles;
+	private Set<Articulo> combos;
+	public Compraventa(String nombre) {
+		this.nombre=nombre;
+		this.combos = new HashSet<>();
+		this.articulosDisponibles= new HashSet<>();
+	}
+	public void ingresarProducto(Articulo producto) throws ProductoExistenteException {
+		if(articulosDisponibles.contains(producto)) {
+			throw new ProductoExistenteException ();
+		}
+		articulosDisponibles.add(producto);
+		
+	}
+
+}

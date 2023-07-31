@@ -1,0 +1,30 @@
+package ar.edu.unlam.pb2.eva03;
+
+public class HidroAvion implements Volador,Acuatico {
+
+	
+	private Integer codigoHidroAvion;
+	private String nombre;
+	private Double profundidad;
+	private Double altura;
+	public HidroAvion(Integer codigoHidroAvion, String nombre) {
+		this.codigoHidroAvion=codigoHidroAvion;
+		this.nombre=nombre;
+		this.profundidad=0.0;
+		this.altura=0.0;
+
+	}
+
+	@Override
+	public Double getProfundidad() {
+		// TODO Auto-generated method stub
+		return this.profundidad;
+	}
+
+	@Override
+	public Double getAltura() {
+		// TODO Auto-generated method stub
+		return this.altura;
+	}
+
+}

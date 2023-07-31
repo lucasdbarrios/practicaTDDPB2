@@ -1,0 +1,16 @@
+package ar.unlam.edu.ar;
+
+public class TicketMixto extends Ticket implements ITransportable, iCargable{
+
+	public TicketMixto(Integer id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Integer obtenerCantidadMaximaPasajero() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

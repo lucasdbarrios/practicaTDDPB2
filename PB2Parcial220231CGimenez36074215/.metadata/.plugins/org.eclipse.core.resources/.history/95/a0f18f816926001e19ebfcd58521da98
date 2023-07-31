@@ -1,0 +1,22 @@
+package ar.edu.unlam.pb2.eva03;
+
+public class Avion extends Vehiculo implements Volador {
+
+	
+	private Double altura;
+	private String nombre;
+	private Integer codigoAvion;
+	
+	public Avion(Integer codigoAvion, String nombre) {
+		
+		super();
+		this.altura= 0.0;
+	}
+
+	@Override
+	public Double getAltura() {
+		
+		return this.altura;
+	}
+
+}

@@ -1,0 +1,17 @@
+package ar.unlam.edu.ar;
+
+public class TicketCarga extends Ticket implements ITransportable {
+
+	private Double cargaMaxima;
+	public TicketCarga(Integer id, Double cargaMaxima) {
+		super(id);
+		
+	}
+
+	@Override
+	public Integer obtenerCantidadMaximaPasajero() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

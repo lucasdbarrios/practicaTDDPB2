@@ -1,0 +1,29 @@
+package ar.edu.unlam.pb2.eva03;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class FuerzaArmada {
+
+	private Set<Vehiculo> convoy;
+	private Map<String, Batalla> batallas;
+	
+	
+	public void FuerzaArmada() {
+		this.convoy= new HashSet<>();
+		this.batallas= new HashMap<>();
+		
+	}
+	
+	
+	
+
+
+	public Integer getCapacidadDeDefensa() {
+		
+		return convoy.size();
+	} 
+
+}
